@@ -80,4 +80,4 @@ networkErrorHandling(error)
 
 ## License
 
-[MIT](LICENSE.md)
+[MIT](LICENSE)
