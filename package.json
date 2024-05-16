@@ -2,6 +2,7 @@
   "name": "network-error-handling",
   "version": "1.0.1",
   "description": "An useful error handler for axios network requests in a React application",
+  "license": "MIT",
   "author": {
     "name": "Victor Ribeiro Boechat",
     "email": "victor2005contato@proton.me",
