@@ -1,0 +1,25 @@
+{
+  "name": "network-error-handling",
+  "version": "1.0.0",
+  "description": "An useful error handler for axios network requests in a React application",
+  "author": {
+    "name": "Victor Ribeiro Boechat",
+    "email": "victor2005contato@proton.me",
+    "url": "https://www.vboechat.com.br"
+  },
+  "main": "dist/network-error-handling.js",
+  "module": "dist/network-error-handling.mjs",
+  "types": "dist/network-error-handling.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "axios": "^1.6.8"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}
