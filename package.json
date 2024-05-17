@@ -3,6 +3,10 @@
   "version": "1.0.3",
   "description": "An useful error handler for axios network requests in a React application",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vboechat/network-error-handling"
+  },
   "author": {
     "name": "Victor Ribeiro Boechat",
     "email": "victor2005contato@proton.me",
@@ -17,10 +21,8 @@
   "scripts": {
     "build": "tsc"
   },
-  "dependencies": {
-    "axios": "^1.6.8"
-  },
   "devDependencies": {
+    "axios": "^1.6.8",
     "typescript": "^5.4.5"
   }
 }
