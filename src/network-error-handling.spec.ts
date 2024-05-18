@@ -1,6 +1,7 @@
 import { describe, it, expect, vi } from "vitest";
 import { AxiosError } from "axios";
 import { networkErrorHandling, ToastFunction } from "./network-error-handling";
+import { StatusCode } from "./status-codes";
 
 describe("networkErrorHandling", () => {
   it("should add an error and handle it without toast", () => {
@@ -9,13 +10,18 @@ describe("networkErrorHandling", () => {
     } as AxiosError;
 
     const handler = networkErrorHandling(axiosError).addError(
-      404,
+      StatusCode.NOT_FOUND,
       "Not Found",
       "The requested resource was not found"
     );
 
     const callback = vi.fn();
-    handler.addError(500, "Server Error", "Internal server error", callback);
+    handler.addError(
+      StatusCode.INTERNAL_SERVER_ERROR,
+      "Server Error",
+      "Internal server error",
+      callback
+    );
 
     handler.handle();
 
@@ -30,7 +36,11 @@ describe("networkErrorHandling", () => {
     const toast: ToastFunction = vi.fn();
 
     const handler = networkErrorHandling(axiosError)
-      .addError(404, "Not Found", "The requested resource was not found")
+      .addError(
+        StatusCode.NOT_FOUND,
+        "Not Found",
+        "The requested resource was not found"
+      )
       .withToast(toast);
 
     handler.handle();
@@ -50,8 +60,17 @@ describe("networkErrorHandling", () => {
     const callback = vi.fn();
 
     const handler = networkErrorHandling(axiosError)
-      .addError(404, "Not Found", "The requested resource was not found")
-      .addError(500, "Server Error", "Internal server error", callback)
+      .addError(
+        StatusCode.NOT_FOUND,
+        "Not Found",
+        "The requested resource was not found"
+      )
+      .addError(
+        StatusCode.INTERNAL_SERVER_ERROR,
+        "Server Error",
+        "Internal server error",
+        callback
+      )
       .withToast(toast);
 
     handler.handle();
@@ -69,8 +88,17 @@ describe("networkErrorHandling", () => {
     const callback = vi.fn();
 
     const handler = networkErrorHandling(axiosError)
-      .addError(404, "Not Found", "The requested resource was not found")
-      .addError(500, "Server Error", "Internal server error", callback)
+      .addError(
+        StatusCode.NOT_FOUND,
+        "Not Found",
+        "The requested resource was not found"
+      )
+      .addError(
+        StatusCode.INTERNAL_SERVER_ERROR,
+        "Server Error",
+        "Internal server error",
+        callback
+      )
       .withToast(toast);
 
     handler.handle();
@@ -85,7 +113,7 @@ describe("networkErrorHandling", () => {
     } as AxiosError;
 
     const handler = networkErrorHandling(axiosError).addError(
-      404,
+      StatusCode.NOT_FOUND,
       "Not Found",
       "The requested resource was not found"
     );
