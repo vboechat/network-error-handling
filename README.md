@@ -31,7 +31,7 @@ import { networkErrorHandling } from "network-error-handling";
 2. Call the function, example:
 
 > [!IMPORTANT]
-> The `error` parameter is the error object from the axios response.
+> The `error` parameter is the `AxiosError` object from the axios response.
 
 ```typescript
 networkErrorHandling(error)
@@ -103,6 +103,27 @@ networkErrorHandling(error)
   )
   .handle();
 ```
+
+## Api References
+
+### `networkErrorHandling(error: AxiosError)`
+
+- `error`: The `AxiosError` object from the axios response.
+
+### `addError(statusCode: number, title: string, description: string, callback?: () => void)`
+
+- `statusCode`: The status code to handle the error.
+- `title`: The title of the error.
+- `description`: The description of the error.
+- `callback`: The callback function to execute when the error is handled.
+
+### `withToast(toastFunction: (title: string, description: string) => void)`
+
+- `toastFunction`: The function to handle the toast.
+
+### `handle()`
+
+- Handle the error.
 
 ## License
 
