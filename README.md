@@ -20,6 +20,8 @@ pnpm install network-error-handling
 
 ## Usage
 
+### Network error handling
+
 1. Import
 
 ```typescript
@@ -28,10 +30,13 @@ import { networkErrorHandling } from "network-error-handling";
 
 2. Call the function, example:
 
+> [!IMPORTANT]
+> The `error` parameter is the error object from the axios response.
+
 ```typescript
 networkErrorHandling(error)
   .addError(
-    StatusCode.CONFLICT,
+    409,
     "User already exists",
     "The user already exists, please try again with another email.",
     () => console.log("Error while creating user")
@@ -39,7 +44,7 @@ networkErrorHandling(error)
   .handle();
 ```
 
-## Using toast
+#### Using toast
 
 If you plan to display a toast of error, you will need to have a function to handle the toast, example using Shadcn
 UI toast component
@@ -56,7 +61,12 @@ After this, you can use the `withToast` method to handle the toast, example:
 ```typescript
 networkErrorHandling(error)
   .addError(
-    StatusCode.CONFLICT,
+    400,
+    "Invalid form data",
+    "The form data is invalid, please check the fields."
+  )
+  .addError(
+    409,
     "User already exists",
     "The user already exists, please try again with another email."
   )
@@ -69,12 +79,28 @@ Ooh, you can also use a callback function when using a toast!
 ```typescript
 networkErrorHandling(error)
   .addError(
-    StatusCode.CONFLICT,
+    409,
     "User already exists",
     "The user already exists, please try again with another email.",
     () => console.log("Error while creating user")
   )
   .withToast(handleErrorToast)
+  .handle();
+```
+
+### Status Codes
+
+This package provides a list of status codes that you can use to handle the errors, example:
+
+```typescript
+import { StatusCode } from "network-error-handling";
+
+networkErrorHandling(error)
+  .addError(
+    StatusCode.CONFLICT,
+    "User already exists",
+    "The user already exists, please try again with another email."
+  )
   .handle();
 ```
 
