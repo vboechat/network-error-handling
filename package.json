@@ -1,8 +1,12 @@
 {
-  "name": "network-error-handling",
+  "name": "network-error-handling-testttttt",
   "version": "1.1.2",
   "description": "An useful error handler for axios network requests in a React application",
   "license": "MIT",
+  "keywords": [
+    "axios",
+    "error-handling"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vboechat/network-error-handling"
@@ -12,9 +16,9 @@
     "email": "victor2005contato@proton.me",
     "url": "https://www.vboechat.com.br"
   },
-  "main": "dist/network-error-handling.js",
-  "module": "dist/network-error-handling.mjs",
-  "types": "dist/network-error-handling.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
