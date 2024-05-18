@@ -1,6 +1,6 @@
 {
   "name": "network-error-handling",
-  "version": "1.0.3",
+  "version": "1.1.1",
   "description": "An useful error handler for axios network requests in a React application",
   "license": "MIT",
   "repository": {
