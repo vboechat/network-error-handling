@@ -33,6 +33,9 @@ import { networkErrorHandling } from "network-error-handling";
 > [!IMPORTANT]
 > The `error` parameter is the `AxiosError` object from the axios response.
 
+> [!CAUTION]
+> For now, the callback parameter is not async aware, so you can't use async functions inside the callback.
+
 ```typescript
 networkErrorHandling(error)
   .addError(
@@ -115,7 +118,7 @@ networkErrorHandling(error)
 - `statusCode`: The status code to handle the error.
 - `title`: The title of the error.
 - `description`: The description of the error.
-- `callback`: The callback function to execute when the error is handled.
+- `callback`: Optional callback function to execute when the error is handled.
 
 ### `withToast(toastFunction: (title: string, description: string) => void)`
 
@@ -127,4 +130,4 @@ networkErrorHandling(error)
 
 ## License
 
-[MIT](LICENSE)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
