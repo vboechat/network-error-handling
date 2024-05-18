@@ -5,8 +5,12 @@
     "declaration": true,
     "declarationDir": "./dist",
     "emitDeclarationOnly": false,
-    "module": "commonjs",
-    "target": "es6"
+    "target": "ESNext",
+    "module": "NodeNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "NodeNext"
   },
   "include": ["src"]
 }
