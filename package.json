@@ -23,7 +23,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && cp ./dist/index.js ./dist/index.mjs",
     "test": "vitest"
   },
   "devDependencies": {

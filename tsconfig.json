@@ -6,11 +6,11 @@
     "declarationDir": "./dist",
     "emitDeclarationOnly": false,
     "target": "ESNext",
-    "module": "NodeNext",
+    "module": "ESNext",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "moduleResolution": "NodeNext"
+    "moduleResolution": "Bundler"
   },
   "include": ["src"]
 }
